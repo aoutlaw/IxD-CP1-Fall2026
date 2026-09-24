@@ -1,6 +1,6 @@
 /* Aquatic Warehouse — responsive hero
    Mobile-first: base styles are for 320–575px,
-   then media queries layer on changes at 576px and 768px. */
+   then media queries add changes at 576px and 768px. */
 
 /* ---------- Base (320px – 575px) ---------- */
 
@@ -41,7 +41,10 @@ h1,
   color: #fff;
 }
 
-.brand svg { width: 64px; height: auto; }
+.brand svg { 
+  width: 64px; 
+  height: auto; 
+}
 
 .brand-name {
   font-size: 13px;
@@ -49,7 +52,7 @@ h1,
   white-space: nowrap;
 }
 
-/* Full width, 250px tall at 320px, and grows in proportion */
+/* Full width, 250px tall at 320px, and grows proportionally */
 .hero-image {
   aspect-ratio: 320 / 250;
   background: url("images/iwagumi-moss.jpg") center / cover;
@@ -59,7 +62,7 @@ h1,
   padding: 28px 20px 0;
 }
 
-/* The "— Freshwater" label is hidden on small screens */
+/* The "-— Freshwater" label is hidden on small screens */
 .eyebrow {
   display: none;
   align-items: center;
@@ -138,7 +141,7 @@ h1 {
     background-image: linear-gradient(rgba(1, 14, 20, 0.6), rgba(1, 14, 20, 0.6)), url("images/iwagumi-moss.jpg");
   }
 
-  /* Keep the content above the image */
+  /* Keep the content layered on top of the image */
   .brand,
   .hero-text,
   .enter {
@@ -169,7 +172,7 @@ h1 {
 
 @media (min-width: 768px) {
 
-  /* Cap the page and its content at 1440px, centered */
+  /* Set the max-width of the page and center it in the viewport */
   .page {
     max-width: 1440px;
     margin: 0 auto;
@@ -177,7 +180,7 @@ h1 {
 
   .hero { padding: 34px 44px 40px; }
 
-  /* Logo and name move to the left */
+  /* Logo and name move to the left on desktop sizes */
   .brand { justify-content: flex-start; }
 
   h1 { font-size: 88px; }
