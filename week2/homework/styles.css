@@ -29,12 +29,13 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 12px;
   padding: 20px;
   color: #fff;
 }
 
-.brand svg { width: 80px; height: auto; }
+.brand svg { width: 64px; height: auto; }
 
 .brand-name {
   font-family: Oswald, sans-serif;
@@ -42,6 +43,7 @@ body {
   font-size: 13px;
   letter-spacing: 0.24em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 /* Full width, 250px tall at 320px, and grows in proportion */
@@ -174,6 +176,11 @@ h1 {
     flex-direction: column;
     justify-content: center;
   }
+
+  /* Logo and name move back to the left */
+  .brand { justify-content: flex-start; gap: 14px; }
+
+  .brand svg { width: 80px; }
 
   .eyebrow { display: flex; }
 
