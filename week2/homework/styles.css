@@ -177,8 +177,8 @@ h1 {
     justify-content: center;
   }
 
-  /* Logo and name move back to the left */
-  .brand { justify-content: flex-start; gap: 14px; }
+  /* Logo and name stay centered, a little larger */
+  .brand { gap: 14px; }
 
   .brand svg { width: 80px; }
 
@@ -188,12 +188,7 @@ h1 {
 
   .hero-text p { font-size: 18px; }
 
-  /* Enter sits bottom-left with the word beside the arrow */
-  .enter {
-    flex-direction: row;
-    align-self: flex-start;
-    gap: 22px;
-  }
+  /* Enter stays centered, arrow above the word */
 }
 
 
@@ -209,7 +204,17 @@ h1 {
 
   .hero { padding: 34px 44px 40px; }
 
+  /* Logo and name move to the left */
+  .brand { justify-content: flex-start; }
+
   h1 { font-size: 88px; }
 
   .hero-text p { font-size: 20px; }
+
+  /* Enter sits bottom-left with the word beside the arrow */
+  .enter {
+    flex-direction: row;
+    align-self: flex-start;
+    gap: 22px;
+  }
 }
