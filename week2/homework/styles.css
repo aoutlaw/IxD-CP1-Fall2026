@@ -8,16 +8,22 @@
 
 body {
   margin: 0;
-  min-width: 320px;
   background: #01080C;
-  -webkit-font-smoothing: antialiased;
+  font-family: Lato, Helvetica, Arial, sans-serif;
 }
 
 .page {
   min-height: 100vh;
-  background: linear-gradient(#0C4F62 0%, #063445 20%, #03212E 46%, #010F17 72%, #00080D 88%, #000407 100%);
-  color: #DDEAEA;
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  background: linear-gradient(#0C4F62, #03212E 46%, #000407);
+}
+
+/* Shared heading style */
+.brand-name,
+.eyebrow,
+h1,
+.enter-label {
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
 }
 
 /* Hero: a simple column — logo, image, text, enter link */
@@ -38,21 +44,15 @@ body {
 .brand svg { width: 64px; height: auto; }
 
 .brand-name {
-  font-family: Oswald, sans-serif;
-  font-weight: 500;
   font-size: 13px;
   letter-spacing: 0.24em;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
 /* Full width, 250px tall at 320px, and grows in proportion */
 .hero-image {
-  width: 100%;
   aspect-ratio: 320 / 250;
-  background-image: url("images/iwagumi-moss.jpg");
-  background-size: cover;
-  background-position: center;
+  background: url("images/iwagumi-moss.jpg") center / cover;
 }
 
 .hero-text {
@@ -65,10 +65,8 @@ body {
   align-items: center;
   gap: 14px;
   margin-bottom: 24px;
-  font-family: Oswald, sans-serif;
   font-size: 12px;
   letter-spacing: 0.4em;
-  text-transform: uppercase;
   color: #7CE6B4;
 }
 
@@ -80,11 +78,8 @@ body {
 
 h1 {
   margin: 0;
-  font-family: Oswald, sans-serif;
-  font-weight: 700;
   font-size: 40px;
   line-height: 1;
-  text-transform: uppercase;
   color: #fff;
 }
 
@@ -92,9 +87,8 @@ h1 {
   max-width: 560px;
   margin: 18px 0 0;
   font-weight: 300;
-  font-size: 16px;
   line-height: 1.6;
-  color: rgba(226, 242, 242, 0.82);
+  color: #C8DCDC;
 }
 
 /* Enter: centered, arrow above the word */
@@ -104,33 +98,23 @@ h1 {
   align-items: center;
   gap: 12px;
   padding: 36px 20px 48px;
+  color: #fff;
   text-decoration: none;
 }
 
 .enter-circle {
   width: 66px;
   height: 66px;
+  border: 1px solid #7CE6B4;
   border-radius: 50%;
-  background: rgba(0, 184, 219, 0.16);
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: glow 3.4s ease-in-out infinite;
 }
 
 .enter-label {
-  font-family: Oswald, sans-serif;
-  font-weight: 500;
   font-size: 14px;
   letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-@keyframes glow {
-  0%, 100% { box-shadow: rgba(124, 230, 180, 0.45) 0 0 0 1px, rgba(0, 184, 219, 0.22) 0 0 26px; }
-  50% { box-shadow: rgba(124, 230, 180, 0.8) 0 0 0 1px, rgba(0, 184, 219, 0.4) 0 0 46px; }
 }
 
 
@@ -146,21 +130,15 @@ h1 {
   }
 
   /* Image becomes a full-size background behind everything,
-     with a dark gradient so the text stays readable */
+     darkened so the text stays readable */
   .hero-image {
     position: absolute;
     inset: 0;
     aspect-ratio: auto;
-    z-index: 0;
+    background-image: linear-gradient(rgba(1, 14, 20, 0.6), rgba(1, 14, 20, 0.6)), url("images/iwagumi-moss.jpg");
   }
 
-  .hero-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(100deg, rgba(1, 14, 20, 0.86) 0%, rgba(1, 14, 20, 0.44) 50%, rgba(1, 14, 20, 0.2) 100%);
-  }
-
+  /* Keep the content above the image */
   .brand,
   .hero-text,
   .enter {
@@ -177,18 +155,13 @@ h1 {
     justify-content: center;
   }
 
-  /* Logo and name stay centered, a little larger */
-  .brand { gap: 14px; }
-
   .brand svg { width: 80px; }
 
   .eyebrow { display: flex; }
 
-  h1 { font-size: 64px; line-height: 0.95; }
+  h1 { font-size: 64px; }
 
   .hero-text p { font-size: 18px; }
-
-  /* Enter stays centered, arrow above the word */
 }
 
 
