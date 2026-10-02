@@ -8,15 +8,26 @@ body {
     margin: 0 auto;
     padding: 16px;
     box-sizing: border-box;
+    background-color: #EFECE1;
 }
 
-/* Thumbnail column takes 1/4 of the width, focus image takes the other 3/4 */
+/* Thumbnail column takes 1/4 width, focus image takes 3/4.
+
+   - max height = window height minus the body's top/bottom padding (32px)
+   - min height = 300px */
 #gallery {
     --gap: 16px;
     display: grid;
     grid-template-columns: 1fr 3fr;
     column-gap: var(--gap);
     align-items: start;
+    width: min(100%, calc(100dvh - 32px + var(--gap)));
+    min-width: calc(300px + var(--gap));
+    margin: 0 auto;
+}
+
+#thumbStrip {
+    position: relative;
 }
 
 #thumbnails {
@@ -37,6 +48,13 @@ body {
     cursor: pointer;
 }
 
+/* Marks the thumbnail currently shown in the focus area. The negative offset
+   draws the outline inside the box so the scrolling row on mobile can't clip it. */
+.thumb.selected {
+    outline: 4px solid darkblue;
+    outline-offset: -4px;
+}
+
 /* Image fits the width; the extra height is cropped by the container */
 .thumb img {
     width: 100%;
@@ -49,4 +67,80 @@ body {
     aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
+}
+
+/* Arrow buttons are only used on mobile */
+.arrowBtn {
+    display: none;
+}
+
+
+/* ------------------------------------------------ */
+/* -------------------- Mobile -------------------- */
+/* ------------------------------------------------ */
+@media (max-width: 600px) {
+
+    /* Thumbnail row on top, focus image below */
+    #gallery {
+        --thumbSize: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--gap);
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Single row that scrolls sideways when it doesn't fit (swipe to move) */
+    #thumbnails {
+        flex-direction: row;
+        justify-content: space-between;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .thumb {
+        flex: 0 0 var(--thumbSize);
+        width: var(--thumbSize);
+        min-width: var(--thumbSize);
+        min-height: var(--thumbSize);
+        scroll-snap-align: start;
+    }
+
+    /* Whole gallery stays between 300px and the window height:
+       focus image gets whatever is left after the thumbnail row and gap */
+    #focusPic {
+        max-height: calc(100dvh - 32px - var(--thumbSize) - var(--gap));
+        min-height: calc(300px - var(--thumbSize) - var(--gap));
+    }
+
+    /* Arrows sit over the ends of the thumbnail row.
+       script.js hides them when there is nothing to scroll. */
+    .arrowBtn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        width: 32px;
+        height: 32px;
+        padding: 0 0 3px;
+        border: none;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.85);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        font-size: 24px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    #prevBtn {
+        left: 4px;
+    }
+
+    #nextBtn {
+        right: 4px;
+    }
 }

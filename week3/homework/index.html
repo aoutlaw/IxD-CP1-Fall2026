@@ -10,19 +10,25 @@
 
     <main id="gallery">
 
-        <section id="thumbnails">
-            <div class="thumb">
-                <img src="images/europe1.jpg" alt="First European picture" id="thumb1">
+        <section id="thumbStrip">
+            <button id="prevBtn" class="arrowBtn" aria-label="Scroll thumbnails left">&lsaquo;</button>
+
+            <div id="thumbnails">
+                <div class="thumb selected">
+                    <img src="images/europe1.jpg" alt="First European picture" id="thumb1">
+                </div>
+                <div class="thumb">
+                    <img src="images/europe2.jpg" alt="Second European picture" id="thumb2">
+                </div>
+                <div class="thumb">
+                    <img src="images/europe3.jpg" alt="Third European picture" id="thumb3">
+                </div>
+                <div class="thumb">
+                    <img src="images/europe4.jpg" alt="Fourth European picture" id="thumb4">
+                </div>
             </div>
-            <div class="thumb">
-                <img src="images/europe2.jpg" alt="Second European picture" id="thumb2">
-            </div>
-            <div class="thumb">
-                <img src="images/europe3.jpg" alt="Third European picture" id="thumb3">
-            </div>
-            <div class="thumb">
-                <img src="images/europe4.jpg" alt="Fourth European picture" id="thumb4">
-            </div>
+
+            <button id="nextBtn" class="arrowBtn" aria-label="Scroll thumbnails right">&rsaquo;</button>
         </section>
 
         <section id="focusArea">
