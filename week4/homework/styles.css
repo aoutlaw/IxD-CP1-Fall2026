@@ -80,11 +80,11 @@ a:hover {
     padding: 24px 16px 48px;
 }
 
-/* Both image containers stop growing at 800px and sit centered */
+/* Both image containers stop growing at 800px and stay left-aligned */
 .imagePair,
 .imageFull {
     max-width: 800px;
-    margin: 24px auto;
+    margin: 24px 0;
 }
 
 /* One column on mobile, so the two sketches stack vertically */
@@ -122,7 +122,7 @@ img {
 
     .imagePair,
     .imageFull {
-        margin: 32px auto;
+        margin: 32px 0;
     }
 
     .imagePair {
