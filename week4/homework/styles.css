@@ -54,6 +54,13 @@ p {
     font-weight: 300;
 }
 
+/* Small, muted class details above the title, styled like a footnote */
+.classInfo {
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
 ul {
     margin-top: 0;
     margin-bottom: 1rem;
