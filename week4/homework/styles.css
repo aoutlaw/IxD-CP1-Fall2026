@@ -87,17 +87,14 @@ a:hover {
     padding: 24px 16px 48px;
 }
 
-/* Both image containers stop growing at 800px and stay left-aligned */
+/* Both image containers stop growing at 1280px and stay left-aligned.
+   One column on mobile, so the images stack vertically. */
 .imagePair,
 .imageFull {
-    max-width: 800px;
-    margin: 24px 0;
-}
-
-/* One column on mobile, so the two sketches stack vertically */
-.imagePair {
     display: grid;
     gap: 20px;
+    max-width: 1280px;
+    margin: 24px 0;
 }
 
 img {
@@ -148,7 +145,8 @@ img {
         padding: 48px 48px 80px;
     }
 
-    .imagePair {
+    .imagePair,
+    .imageFull {
         gap: 40px;
     }
 }
