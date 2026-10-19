@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5 Homework</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main id="page">
+
+        <header id="pageHeader">
+            <p class="classInfo">
+                Class: GIXD503A | Week 5<br>
+                Assignment: Create a Product Interface in Blender<br>
+                Angelo Outlaw
+            </p>
+            <h1>Create a Product Interface in Blender</h1>
+            <p class="lead">Place your Github dashboard in an environment where a person would reasonably use it.</p>
+        </header>
+
+        <section id="resources">
+            <h2>Resources</h2>
+            <p><a href="https://blendswap.com/blend/2746">Scene: Library Setting</a></p>
+            <p><a href="https://blendswap.com/blend/18312">Object: Laptop</a></p>
+            <p><a href="https://blendswap.com/blend/18778">Scene: Study Room - Game Engine (did not use)</a></p>
+            <p><a href="https://blendswap.com/blend/23627">Scene: Super Mario Galaxy: The Library (did not use)</a></p>
+            <p><a href="https://blendswap.com/blend/31736">Materials: Procedural Materials v1.1</a></p>
+        </section>
+
+        <section id="process">
+            <h2>Process</h2>
+            <p>For this project, I decided to use a library as a place that someone might access their Goodreads website from. In this scenario, a person is trying to decide what books they will check out next, and they will use their dashboard to make recommendations. Then they will see if any of the recommended books are available at the library branch they are at.</p>
+            <p>I started by looking for a scene that I could place the content in. I really wanted to find something that wasn't just an image, but a full interactive scene. I found sone on Blendswap.com, but they had pieces missing and/or weren't working like the sample picture showed at the time of download. Still, I think this is a good place to start. I can work with what was given and modify the materials and lighting to get it to a place where I want.</p>
+            <p>I used the Library Setting, made some modifications to the lighting by turning the intensity of the area lights up to 3000, then added the Mac Laptop onto one of the tables.</p>
+        </section>
+
+        <section id="results">
+            <h2>Results</h2>
+            <p>I tried rendering each of the final images two different ways so that I could compare them.</p>
+            <ol>
+                <li>EVEE at 1024 samples</li>
+                <li>Cycles with GPU Compute at 1024 samples</li>
+            </ol>
+
+            <h3>Close-up</h3>
+            <p>Click or drag across the image to compare Cycles (left) with EEVEE (right).</p>
+
+            <div class="compare" style="--position: 50%" tabindex="0" role="slider" aria-label="Close-up comparison: Cycles on the left, EEVEE on the right" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="compareLayer">
+                    <img src="images/library-02.png" alt="Close-up EEVEE render of a laptop on a library table, with chairs and bookshelves behind it">
+                    <span class="compareLabel labelRight">EEVEE</span>
+                </div>
+                <div class="compareLayer compareTop">
+                    <img src="images/library-01.png" alt="Close-up Cycles render of the same laptop and library table">
+                    <span class="compareLabel labelLeft">Cycles</span>
+                </div>
+                <div class="compareHandle"><span class="compareKnob">&lsaquo; &rsaquo;</span></div>
+            </div>
+
+            <h3>Wide Angle</h3>
+            <p>Click or drag across the image to compare EEVEE (left) with Cycles (right).</p>
+
+            <div class="compare" style="--position: 50%" tabindex="0" role="slider" aria-label="Wide angle comparison: EEVEE on the left, Cycles on the right" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="compareLayer">
+                    <img src="images/library-04.png" alt="Wide angle Cycles render of the library, with pillars, bookshelves, and tables with chairs">
+                    <span class="compareLabel labelRight">Cycles</span>
+                </div>
+                <div class="compareLayer compareTop">
+                    <img src="images/library-03.png" alt="Wide angle EEVEE render of the same library view">
+                    <span class="compareLabel labelLeft">EEVEE</span>
+                </div>
+                <div class="compareHandle"><span class="compareKnob">&lsaquo; &rsaquo;</span></div>
+            </div>
+
+            <h3>Zoomed Out</h3>
+            <div class="imageFull">
+                <img src="images/library-05.png" alt="Zoomed out view of the entire library scene">
+            </div>
+
+            <h3>Questions</h3>
+            <p>I tried applying a wood texture from the Procedural Materials pack to the library tables and the color worked, but the texture didn't seem to come through. Why?</p>
+            <p>Why didn't the lights and textures work when I opened the original scene file that I had downloaded? It seems like maybe some linked image files were missing?</p>
+        </section>
+
+    </main>
+
+<script src="script.js"></script>
+</body>
+</html>
