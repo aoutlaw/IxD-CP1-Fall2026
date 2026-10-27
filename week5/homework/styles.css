@@ -113,8 +113,8 @@ video {
     margin: 24px 0;
 }
 
-/* Tall, skinny Blender panel screenshots would be blown up past their real
-   size at full width, so they stop at 400px */
+/* Tall, skinny Blender settings screenshots stay narrow so they aren't
+   blown up to full width. Tablet and desktop switch to half the screen. */
 .imageNarrow {
     max-width: 400px;
 }
@@ -255,6 +255,10 @@ video {
     .compare,
     .imageFull {
         margin: 32px 0;
+    }
+
+    .imageNarrow {
+        max-width: 50vw;
     }
 }
 
