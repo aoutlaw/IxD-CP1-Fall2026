@@ -1,0 +1,143 @@
+/* Mobile-first: the base styles below are the mobile layout (320-767px).
+   The tablet (768-1080px) and desktop (1081px and up) sections at the
+   bottom only override what changes. */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------ */
+/* ------------------ Text styles ----------------- */
+/* ------------------------------------------------ */
+
+body {
+    min-width: 320px;
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: min(calc(1.425rem + 2.1vw), 3rem);
+}
+
+h2 {
+    margin-top: 3rem;
+    font-size: min(calc(1.325rem + 0.9vw), 2rem);
+}
+
+h3 {
+    margin-top: 2rem;
+    font-size: min(calc(1.3rem + 0.6vw), 1.75rem);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* Small, muted class details above the title, styled like a footnote */
+.classInfo {
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* Link to the reading, tucked under its heading */
+.source {
+    font-size: 0.875rem;
+}
+
+/* Each quote from a reading, followed by my response in plain paragraphs.
+   The blue tint and border borrow from the link color so quotes stand
+   apart from the response text. */
+blockquote {
+    margin: 2rem 0 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #084298;
+    background-color: #f1f6ff;
+    border-left: 4px solid #0d6efd;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+a {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0a58ca;
+}
+
+hr {
+    margin: 3rem 0;
+}
+
+
+/* ------------------------------------------------ */
+/* -------------------- Layout -------------------- */
+/* ------------------------------------------------ */
+
+#page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+/* Keeps the reading responses at a comfortable line length */
+section {
+    max-width: 960px;
+}
+
+
+/* ------------------------------------------------ */
+/* -------------------- Tablet -------------------- */
+/* ------------------------------------------------ */
+
+@media (min-width: 768px) {
+    #page {
+        padding: 32px 32px 64px;
+    }
+
+    .lead {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* ------------------------------------------------ */
+/* -------------------- Desktop ------------------- */
+/* ------------------------------------------------ */
+
+@media (min-width: 1081px) {
+    #page {
+        padding: 48px 48px 80px;
+    }
+}

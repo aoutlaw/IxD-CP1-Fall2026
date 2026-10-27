@@ -26,22 +26,30 @@ body {
 h1, h2, h3 {
     margin-top: 0;
     margin-bottom: 0.5rem;
-    font-weight: 500;
     line-height: 1.2;
 }
 
+/* Page titles: biggest and heaviest, pulled slightly tighter */
 h1 {
-    font-size: min(calc(1.425rem + 2.1vw), 3rem);
+    font-size: min(calc(1.6rem + 2.6vw), 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
+/* Section headings: medium size and semibold */
 h2 {
-    margin-top: 3rem;
-    font-size: min(calc(1.325rem + 0.9vw), 2rem);
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+    font-size: min(calc(1.3rem + 0.9vw), 2rem);
+    font-weight: 600;
 }
 
+/* Sub-topics inside a section: small and muted so they read as labels */
 h3 {
     margin-top: 2rem;
-    font-size: min(calc(1.3rem + 0.6vw), 1.75rem);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #495057;
 }
 
 p {
@@ -76,6 +84,11 @@ a:hover {
     color: #0a58ca;
 }
 
+/* Extra breathing room around the divider between the Week 5 and Week 6 write-ups */
+hr {
+    margin: 2rem 0;
+}
+
 
 /* ------------------------------------------------ */
 /* -------------------- Layout -------------------- */
@@ -87,7 +100,8 @@ a:hover {
     padding: 24px 16px 48px;
 }
 
-img {
+img,
+video {
     display: block;
     width: 100%;
     height: auto;
@@ -97,6 +111,31 @@ img {
 .imageFull {
     max-width: 1280px;
     margin: 24px 0;
+}
+
+/* Tall, skinny Blender panel screenshots would be blown up past their real
+   size at full width, so they stop at 400px */
+.imageNarrow {
+    max-width: 400px;
+}
+
+/* The animation renders at 960x540, so it stops there instead of being
+   stretched blurry */
+.videoFrame {
+    max-width: 960px;
+}
+
+/* Step descriptions sitting next to an image */
+.caption {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* A caption placed above its image sits snug against the image below it */
+.caption:first-child {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
 
@@ -116,6 +155,12 @@ img {
     -webkit-user-select: none;
     /* Sideways drags move the slider; up/down swipes still scroll the page */
     touch-action: pan-y;
+}
+
+/* The screen glow renders are only 640px wide, so that slider stops there
+   instead of stretching them blurry */
+.compareSmall {
+    max-width: 640px;
 }
 
 .compare:focus-visible {

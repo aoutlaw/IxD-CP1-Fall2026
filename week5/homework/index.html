@@ -16,11 +16,11 @@
                 Assignment: Create a Product Interface in Blender<br>
                 Angelo Outlaw
             </p>
-            <h1>Create a Product Interface in Blender</h1>
+            <h1>Create a Product Interface in Blender: Week 5</h1>
             <p class="lead">Place your Goodreads dashboard in an environment where a person would reasonably use it.</p>
         </header>
 
-        <section id="resources">
+        <section id="resources-week-5">
             <h2>Resources</h2>
             <p><a href="https://blendswap.com/blend/2746">Scene: Library Setting</a></p>
             <p><a href="https://blendswap.com/blend/18312">Object: Laptop</a></p>
@@ -49,11 +49,11 @@
 
             <div class="compare" style="--position: 50%" tabindex="0" role="slider" aria-label="Close-up comparison: Cycles on the left, EEVEE on the right" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
                 <div class="compareLayer">
-                    <img src="images/library-02.png" alt="Close-up EEVEE render of a laptop on a library table, with chairs and bookshelves behind it">
+                    <img src="images/library-02.jpg" alt="Close-up EEVEE render of a laptop on a library table, with chairs and bookshelves behind it">
                     <span class="compareLabel labelRight">EEVEE</span>
                 </div>
                 <div class="compareLayer compareTop">
-                    <img src="images/library-01.png" alt="Close-up Cycles render of the same laptop and library table">
+                    <img src="images/library-01.jpg" alt="Close-up Cycles render of the same laptop and library table">
                     <span class="compareLabel labelLeft">Cycles</span>
                 </div>
                 <div class="compareHandle"><span class="compareKnob">&lsaquo; &rsaquo;</span></div>
@@ -64,11 +64,11 @@
 
             <div class="compare" style="--position: 50%" tabindex="0" role="slider" aria-label="Wide angle comparison: EEVEE on the left, Cycles on the right" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
                 <div class="compareLayer">
-                    <img src="images/library-04.png" alt="Wide angle Cycles render of the library, with pillars, bookshelves, and tables with chairs">
+                    <img src="images/library-04.jpg" alt="Wide angle Cycles render of the library, with pillars, bookshelves, and tables with chairs">
                     <span class="compareLabel labelRight">Cycles</span>
                 </div>
                 <div class="compareLayer compareTop">
-                    <img src="images/library-03.png" alt="Wide angle EEVEE render of the same library view">
+                    <img src="images/library-03.jpg" alt="Wide angle EEVEE render of the same library view">
                     <span class="compareLabel labelLeft">EEVEE</span>
                 </div>
                 <div class="compareHandle"><span class="compareKnob">&lsaquo; &rsaquo;</span></div>
@@ -76,13 +76,138 @@
 
             <h3>Zoomed Out</h3>
             <div class="imageFull">
-                <img src="images/library-05.png" alt="Zoomed out view of the entire library scene">
+                <img src="images/library-05.jpg" alt="Zoomed out view of the entire library scene">
             </div>
 
             <h3>Questions</h3>
             <p>I tried applying a wood texture from the Procedural Materials pack to the library tables and the color worked, but the texture didn't seem to come through. Why?</p>
             <p>Why didn't the lights and textures work when I opened the original scene file that I had downloaded? It seems like maybe some linked image files were missing?</p>
         </section>
+
+        <hr />
+
+        <section id="week-6">
+            <h1>Create a Product Interface in Blender: Week 6</h1>
+            <p>In the second week of this project, I focused on refining what I had started with, resolving some texture issues on the space that I downloaded, and adding some additional elements, improved textures, and lighting effects. I also spent some time removing parts of the scene and materials that did not apply so that I could keep my file clean.</p>
+        </section>
+
+        <section id="resources-week-6">
+            <h2>Resources</h2>
+            <ul>
+                <li>Polyhaven &gt; Textures &gt; <a href="https://polyhaven.com/a/dirty_carpet" target="_blank">Dirty Carpet</a></li>
+                <li>Polyhaven &gt; Textures &gt; <a href="https://polyhaven.com/a/oak_veneer_05" target="_blank">Oak Veneer 05</a></li>
+                <li>Polyhaven &gt; Textures &gt; <a href="https://polyhaven.com/a/plastered_wall_04" target="_blank">Plastered Wall 04</a></li>
+                <li>Polyhaven &gt; Textures &gt; <a href="https://polyhaven.com/a/grass_medium_01" target="_blank">Grass Medium 01</a></li>
+                <li>Polyhaven &gt; Textures &gt; <a href="https://polyhaven.com/a/bark_brown_01" target="_blank">Bark Brown 01</a></li>
+                <li>Polyhaven &gt; Textures &gt; <a href="https://polyhaven.com/a/plastered_wall" target="_blank">Plastered Wall</a></li>
+            </ul>
+        </section>
+
+        <section id="challenges">
+            <h2>Challenges / Observations</h2>
+            <p>After last week, I knew I would be working against several challenges that I was unable to resolve and had kicked to a later milestone.</p>
+            <p>The biggest, and most frustrating of these was that many of the links to the textures that were used in the scene that I downloaded were broken or not working properly. To make it worse, when I added textures, I could only see a color applied rather than the texture itself. After several hours of trying to diagnose, I referred the problem to Claude.ai, which quickly identified that the object did not have UV maps applied. So when I would add a texture, it would only find and render the color of the first pixel it saw from the texture. Once this was resolved, I was able to start adding textures.</p>
+
+            <h3>Using Arrays</h3>
+            <p>Another thing I noticed was that the scene made efficient use of arrays, which duplicate elements multiple times to create many-from-one. An example of this was the way the floor was laid out. It used a single large floor tile, which was duplicated along the X-axis, then again along the Y-axis, to create a multiplicative effect. Let's look at how I did this with the carpet.</p>
+
+            <div class="imageFull">
+                <p class="caption">Step 1: Create the carpet plane, apply the Dirty Carpet texture.</p>
+                <img src="images/carpet_array_01.jpg" alt="Zoomed out view of the scene with the first carpet tile added">
+            </div>
+
+            <div class="imageFull">
+                <p class="caption">Step 2: Generate an array from the carpet object by selecting the carpet and choosing Modifier &gt; Generate &gt; Array.</p>
+                <img src="images/carpet_array_02.jpg" alt="Zoomed out view of the scene with the first carpet tile added, with Modifier &gt; Generate &gt; Array selected">
+            </div>
+
+            <div class="imageFull imageNarrow">
+                <p class="caption">Step 3: Duplicate your object across a single axis. In this case I used the X-axis.</p>
+                <img src="images/carpet_array_settings_01.jpg" alt="Array settings applied to duplicate the object along the X-axis">
+            </div>
+
+            <div class="imageFull">
+                <p class="caption">Step 4: Note here that the carpet object is now duplicated.</p>
+                <img src="images/carpet_array_03.jpg" alt="Zoomed out view of the scene with the carpet tile duplicated along the X-axis">
+            </div>
+
+            <div class="imageFull imageNarrow">
+                <p class="caption">Step 5: With the object still selected, now apply a second array modifier along the Y-axis.</p>
+                <img src="images/carpet_array_settings_02.jpg" alt="Array settings applied to duplicate the element across the Y-axis">
+            </div>
+
+            <div class="imageFull">
+                <p class="caption">Step 6: Note the second array applies itself to the results of the first array, creating a building multiplicative effect to complete the coverage of the entire scene.</p>
+                <img src="images/carpet_array_04.jpg" alt="Zoomed out view of the scene showing the carpet duplicated across the X and Y-axis to create full coverage of the scene">
+            </div>
+
+            <p>Something else worth noting regarding arrays is that anything you do to change the original object is applied to all duplicate objects in the array. So if you plan it right, you can efficiently change a large number of objects by updating the &lsquo;master&rsquo;.</p>
+
+            <h3>Applying the Same Texture at Different Angles</h3>
+            <p>When applying the same texture to an object with very different angles, it was necessary to change the UV mapping for those other angles. A good example of this is the tables in this scene. The texture applied to the table surfaces did not look good when it was horizontally applied to the vertical table legs. I manually selected the table legs, and adjusted the UV mapping on just that part of the object.</p>
+
+            <div class="imageFull">
+                <p class="caption">Note how the texture is applied horizontally to the vertical table legs. Not a good look.</p>
+                <img src="images/table_uv_map_01.jpg" alt="Table object with the wood texture running the wrong direction on the table legs">
+            </div>
+
+            <div class="imageFull">
+                <p class="caption">In Edit Mode, I selected only the faces of the table legs.</p>
+                <img src="images/table_uv_map_03.jpg" alt="Table object in Edit Mode with only the faces of the table legs selected">
+            </div>
+
+            <div class="imageFull">
+                <p class="caption">By selecting only the faces of the legs of the table object, I was able to rotate the texture on those pieces by 90 degrees without having to separate them from the merged table object.</p>
+                <img src="images/table_uv_map_04.jpg" alt="Table object with the wood texture correctly running vertically on the table legs">
+            </div>
+
+            <h3>Adding Emission Effect to Laptop Screen</h3>
+            <p>Last week I had applied a screenshot of the Goodreads website to the MacBook Pro on the table, but it looked fake because the laptop screen didn't appear to be a source of light. After some trial and error, and a little help from Claude.ai, I was able to add a material to the screen with an emission effect that makes it look like the screen is providing its own light. I managed to do this without sacrificing the look of the screenshot by applying a separate material to the same object face.</p>
+            <p>You can see before | after the emission effect was applied below by moving the slider on the image.</p>
+
+            <div class="compare compareSmall" style="--position: 50%" tabindex="0" role="slider" aria-label="Screen glow comparison: before on the left, after on the right" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                <div class="compareLayer">
+                    <img src="images/screen_glow_after.jpg" alt="Laptop on the library table with the emission effect, so the screen glows and lights the table around it">
+                    <span class="compareLabel labelRight">After</span>
+                </div>
+                <div class="compareLayer compareTop">
+                    <img src="images/screen_glow_before.jpg" alt="The same laptop before the emission effect, with a flat, unlit screen">
+                    <span class="compareLabel labelLeft">Before</span>
+                </div>
+                <div class="compareHandle"><span class="compareKnob">&lsaquo; &rsaquo;</span></div>
+            </div>
+
+            <h3>Other Improvements</h3>
+            <ul>
+                <li>Added transparency to the faces of the wall that were supposed to be glass. I used 60% transparency and applied a dark color to the surface, and a high reflectivity to make it look like tinted glass.</li>
+                <li>I expanded the plane outside the windows and added a <a href="https://aoutlaw.github.io/IxD-CP1-Fall2026/week4/homework/" target="_blank">grass texture</a> from week 4.</li>
+                <li>Added a bark texture to the trees outside so that any incidental views outside of the windows would have at least some context. There is plenty of room for improvement here, even to the level of creating a full garden.</li>
+                <li>I added a similar, but more powerful emission effect to the overhead lights to make them appear to glow too. Note that they are not the source of the area lights, which are separate.</li>
+            </ul>
+
+            <h3>My Computer is Woefully Underpowered</h3>
+            <p>I am working with a 2023 M3 iMac with 16GB of RAM and integrated GPU. This seemed fast when I got it. Handbrake, for example, renders movies at alternate resolutions in half the time that it used to on my older computer. But rendering any serious animations or graphics from Blender would take some more dedicated/serious horsepower. Sadly, I cannot afford a $10,000 Mac. But one can dream!</p>
+        </section>
+
+        <section id="final-render">
+            <h2>Final Render</h2>
+            <p>I had to strike a balance between quality and speed with the final render. With my original high quality settings, the render for 150 frames was set to take between 10-24 hours. Too much!</p>
+            <p>Time to render: 1hr:30min @ 50% size.</p>
+
+            <h3>Render Settings</h3>
+            <div class="imageFull imageNarrow">
+                <img src="images/final_render_settings.jpg" alt="Close up of my final render settings">
+            </div>
+
+            <h3>The Animation</h3>
+            <!-- No loop or autoplay: each press of play runs the animation once and it stops on the final frame -->
+            <div class="imageFull videoFrame">
+                <video src="images/library_scene.mp4" width="960" height="540" controls playsinline preload="metadata">
+                    <a href="images/library_scene.mp4">Download the library scene animation</a>
+                </video>
+            </div>
+        </section>
+
 
     </main>
 
