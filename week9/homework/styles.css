@@ -1,0 +1,191 @@
+/* Mobile-first: the base styles below are the mobile layout (320-767px).
+   The tablet (768-1080px) and desktop (1081px and up) sections at the
+   bottom only override what changes. */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------ */
+/* ------------------ Text styles ----------------- */
+/* ------------------------------------------------ */
+
+body {
+    min-width: 320px;
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: min(calc(1.425rem + 2.1vw), 3rem);
+}
+
+h2 {
+    margin-top: 3rem;
+    font-size: min(calc(1.325rem + 0.9vw), 2rem);
+}
+
+h3 {
+    margin-top: 2rem;
+    font-size: min(calc(1.3rem + 0.6vw), 1.75rem);
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* Small, muted class details above the title, styled like a footnote */
+.classInfo {
+    margin-bottom: 1.5rem;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+a {
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0a58ca;
+}
+
+/* p5.js functions and constants mentioned in the text, so they read as
+   code instead of regular words */
+code {
+    padding: 0.1em 0.35em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+    color: #d63384;
+    background-color: #f1f3f5;
+    border-radius: 0.25rem;
+}
+
+
+/* ------------------------------------------------ */
+/* -------------------- Layout -------------------- */
+/* ------------------------------------------------ */
+
+#page {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+/* Keeps the write-up at a comfortable line length */
+section {
+    max-width: 960px;
+}
+
+/* The assignment brief from the class sits in a gray panel so it's
+   clearly separate from my own write-up below it */
+.assignment {
+    margin-top: 2rem;
+    padding: 1.5rem 1rem 0.5rem;
+    background-color: #f1f3f5;
+    border-left: 4px solid #adb5bd;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.assignment h2 {
+    margin-top: 0;
+}
+
+/* Embedded p5.js sketches: full width on small screens, capped on larger
+   ones so they don't stretch past the text column */
+iframe {
+    display: block;
+    width: 100%;
+    max-width: 960px;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin: 1rem 0 1.5rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}
+
+/* Divider marking the switch to AI-assisted work: a rule on each side
+   with the label centered between them. The rules grow and shrink to
+   fill whatever width the window has. */
+.aiDivider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 4rem 0 2rem;
+    color: #6f42c1;
+}
+
+.aiDivider hr {
+    flex: 1;
+    margin: 0;
+    border: 0;
+    border-top: 2px solid currentColor;
+    opacity: 0.5;
+}
+
+.aiDivider p {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Callout under the AI divider. Uses the same purple as the divider so
+   the two read as one marker. */
+.note {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    color: #432874;
+    background-color: #f3effa;
+    border-left: 4px solid #6f42c1;
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+
+/* ------------------------------------------------ */
+/* -------------------- Tablet -------------------- */
+/* ------------------------------------------------ */
+
+@media (min-width: 768px) {
+    #page {
+        padding: 32px 32px 64px;
+    }
+
+    .assignment {
+        padding: 2rem 2rem 1rem;
+    }
+}
+
+
+/* ------------------------------------------------ */
+/* -------------------- Desktop ------------------- */
+/* ------------------------------------------------ */
+
+@media (min-width: 1081px) {
+    #page {
+        padding: 48px 48px 80px;
+    }
+}
