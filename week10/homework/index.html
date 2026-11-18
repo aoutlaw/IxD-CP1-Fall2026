@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CP1 - Week 10 - Homework</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main id="page">
+
+        <header id="pageHeader">
+            <p class="classInfo">
+                Class: GIXD503A | Week 10<br>
+                Assignment: Time and Oscillation<br>
+                Angelo Outlaw
+            </p>
+            <h1>Week 10 - Time and Oscillation</h1>
+        </header>
+
+        <section id="assignment" class="assignment">
+            <h2>Assignment</h2>
+            <p>Create an animation with at least two moving shapes - one moving in a repeated motion (e.g. a pendulum or a rotating planet) and the other performing a movement after a predetermined interval of time has passed. You can add more than 2 shapes if you like.</p>
+
+            <ul>
+                <li>Use trigonometric function to describe repeated motion</li>
+                <li>Use time function to calculate the interval</li>
+                <li>De-synchronize the two movements from each other to create complex motion rhythm</li>
+            </ul>
+
+            <p>Try to use randomness and/or Perlin noise to create organic shapes.</p>
+
+            <h3>Documentation:</h3>
+
+            <p>In the process of your work capture the images of the iterations - at least 6 in total. Create a webpage and write a sentence or two for each image explaining the evolution of work. Embed your sketch from openProcessing or P5js to the webpage.</p>
+        </section>
+
+        <section id="process">
+            <h2>My Process</h2>
+            <p>For this project, I liked the idea of a planet. But I wanted to add layers that moved across one another so that there were clear continents and clouds. I knew this would go beyond my ability to code by hand pretty quickly, but I wanted to see how far I could go, and work with an LLM to fill in gaps, trying to learn from the LLM output as well as the provided class resources within the given timeline.</p>
+
+            <p>With this in mind, I appreciated the idea of working in steps. This gave me a way to break the project down into simple steps that I could do myself, followed by LLM-assisted steps, and ultimately full-LLM takeover (with guidance of course).</p>
+
+            <h3>Step 1</h3>
+            <p>I started with a group of 250 stars. Each star has a random size, position, and brightness to make it look like space.</p>
+
+            <iframe src="https://editor.p5js.org/angelo.outlaw/full/rmfptnWu5" title="Step 1 p5.js sketch"></iframe>
+        </section>
+
+        <!-- Everything above this line is my own work; everything below was AI-assisted -->
+        <div class="aiDivider">
+            <hr>
+            <p>AI line</p>
+            <hr>
+        </div>
+
+        <section id="ai-assisted">
+            <p class="note"><strong>Note:</strong> From this point forward, I started to use help from AI.</p>
+
+            <h3>Step 2</h3>
+            <p>Now that I had the stars, I wanted to see if I could add some randomness to their light output over time. I was able to add this twinkle effect by myself.</p>
+
+            <iframe src="https://editor.p5js.org/angelo.outlaw/full/8kZw7djKG" title="Step 2 p5.js sketch"></iframe>
+
+            <h3>Step 3</h3>
+            <p>I added a sphere (the planet) in front of the starfield. I also added a radial gradient for shading, a glowing blue drop shadow to show the upper atmosphere, and a blue stroke to show the lower atmosphere.</p>
+
+            <iframe src="https://editor.p5js.org/angelo.outlaw/full/v1jQNjCEU" title="Step 3 p5.js sketch"></iframe>
+
+            <h3>Step 4</h3>
+            <p>I added continents to the planet. The continents are blobs made with Perlin noise. Each continent sits at a random spot on the sphere of the planet. Each time a frame loads, the sphere "turns" a little bit and the blobs are projected onto the screen with sin/cos, so the land masses move around the globe and then squeeze toward the edges, making them look three-dimensional (this last part was definitely done with LLM assistance).</p>
+
+            <iframe src="https://editor.p5js.org/angelo.outlaw/full/jih2iITVW" title="Step 4 p5.js sketch"></iframe>
+
+            <h3>Step 5</h3>
+            <p>Now that I have continents, I added drifting clouds. I wanted the clouds to move at a different speed from the land masses, and for them to be somewhat transparent so they would be easy to identify as clouds. I also made these using blobs and Perlin noise.</p>
+
+            <iframe src="https://editor.p5js.org/angelo.outlaw/full/Gzb-L_MCg" title="Step 5 p5.js sketch"></iframe>
+
+            <h3>Step 6 [FINAL]</h3>
+            <p>Now that I had the clouds, they looked kind of fake. I worked with Claude to add a time variable to the noise so that they would change shape over time as they travel. Then I added a couple of extra layers to each cloud mass with different transparency per layer to give them a little more dimension.</p>
+
+            <iframe src="https://editor.p5js.org/angelo.outlaw/full/qH3PoTehu" title="Step 6 p5.js sketch"></iframe>
+
+            <p class="note"><strong>Note:</strong> FULL AI use here. This was just for fun.</p>
+
+            <h3>Step 7 [BONUS]</h3>
+            <p>Since I was already working with LLM assistance from Claude, I let the AI go wild for a final step. I added a meteor hurtling toward the planet, hitting it, cracks forming, lava spewing, and ultimately the planet exploding into teeny tiny particles, leaving nothing behind. I also added some sound effects and a click event to trigger the animation. This is strictly a bonus step for fun. I mean... I was already 85% there. Let's cause some mayhem while we're at it.</p>
+
+            <iframe src="https://editor.p5js.org/angelo.outlaw/full/XQLV_ZgN4" title="Step 7 p5.js sketch"></iframe>
+        </section>
+
+    </main>
+
+</body>
+</html>
